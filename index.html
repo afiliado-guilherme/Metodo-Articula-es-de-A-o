@@ -767,49 +767,22 @@
         }
       </style>
       <div class="video-HdEgxH0386900">
-        
-<div id="videoContainer" style="position: relative; width: 100%; padding-top: 56.25%; background: #000;">
-    <video id="videoPlayer" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" autoplay controls controlsList="nodownload noremoteplayback nofullscreen">
+
+        <!-- COLE SEU CODIGO ABAIXO -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.11.4/video-js.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.11.4/video.min.js"></script>
+
+<div>
+    <video id="my-video" class="video-js vjs-default-skin" controls autoplay>
+        <source src="https://cdn.converteai.net/f57b20d4-90f6-4e53-9180-25cce4564706/672d806eb8a560000c6c94cd/main.m3u8" type="application/x-mpegURL">
         Seu navegador não suporta o elemento de vídeo.
     </video>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-
 <script>
-    if (Hls.isSupported()) {
-        var video = document.getElementById('videoPlayer');
-        var hls = new Hls();
-        hls.loadSource('https://cdn.converteai.net/f57b20d4-90f6-4e53-9180-25cce4564706/672d806eb8a560000c6c94cd/main.m3u8');
-        hls.attachMedia(video);
-        video.play(); // Inicia a reprodução automaticamente
-    } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-        video.src = 'https://cdn.converteai.net/f57b20d4-90f6-4e53-9180-25cce4564706/672d806eb8a560000c6c94cd/main.m3u8';
-        video.play(); // Inicia a reprodução automaticamente
-    } else {
-        console.error('HLS não é suportado neste navegador.');
-    }
+    var player = videojs('my-video');
 </script>
-
-<style>
-    /* Oculta a barra de progresso do vídeo */
-    video::-webkit-media-controls-timeline {
-        display: none;
-    }
-
-    video::-webkit-media-controls {
-        display: block;
-    }
-
-    /* Oculta a barra de progresso em outros navegadores */
-    video::-moz-media-controls-timeline {
-        display: none;
-    }
-    
-    video::-ms-media-controls-timeline {
-        display: none;
-    }
-</style>
+        <!-- FIM !!!! -->
       </div>
       
       <div class="description-YWWyRI0392116">
