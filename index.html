@@ -767,36 +767,26 @@
         }
       </style>
       <div class="video-HdEgxH0386900">
-      <div id="vid_672d80b1b8a560000c6c94ed" style="position:relative;width:100%;padding:56.25% 0 0;">
-  <video id="meu_video" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;" controls autoplay>
-    <!-- O vídeo será carregado dinamicamente -->
-  </video>
-
-  <div id="backdrop_672d80b1b8a560000c6c94ed" 
-       style="position:absolute;top:0;width:100%;height:100%;-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);">
-  </div>
+        
+          <div id="videoContainer" style="position: relative; width: 100%; padding-top: 56.25%; background: #000;">
+    <video id="videoPlayer" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" controls></video>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 
 <script>
-  var video = document.getElementById('meu_video');
-  var videoSrc = "https://cdn.converteai.net/f57b20d4-90f6-4e53-9180-25cce4564706/672d806eb8a560000c6c94cd/main.m3u8";
-
-  if (Hls.isSupported()) {
-    var hls = new Hls();
-    hls.loadSource(videoSrc);
-    hls.attachMedia(video);
-    hls.on(Hls.Events.MANIFEST_PARSED, function() {
-      video.play();
-    });
-  } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-    video.src = videoSrc;
-    video.addEventListener('loadedmetadata', function() {
-      video.play();
-    });
-  }
+    if (Hls.isSupported()) {
+        var video = document.getElementById('videoPlayer');
+        var hls = new Hls();
+        hls.loadSource('https://cdn.converteai.net/f57b20d4-90f6-4e53-9180-25cce4564706/672d806eb8a560000c6c94cd/main.m3u8');
+        hls.attachMedia(video);
+    } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        video.src = 'https://cdn.converteai.net/f57b20d4-90f6-4e53-9180-25cce4564706/672d806eb8a560000c6c94cd/main.m3u8';
+    } else {
+        console.error('HLS não é suportado neste navegador.');
+    }
 </script>
+        
       </div>
       <div class="description-YWWyRI0392116">
         <style>
