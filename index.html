@@ -767,27 +767,41 @@
         }
       </style>
       <div class="video-HdEgxH0386900">
-       <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+      <div id="vid_672d80b1b8a560000c6c94ed" style="position:relative;width:100%;padding:56.25% 0 0;">
+  <video id="meu_video" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;" controls autoplay>
+    <!-- O vídeo será carregado dinamicamente -->
+  </video>
 
-<video id="meu_video" controls autoplay style="width:100%; max-width:800px;"></video>
+  <div id="backdrop_672d80b1b8a560000c6c94ed" 
+       style="position:absolute;top:0;width:100%;height:100%;-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);">
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 
 <script>
-    var video = document.getElementById('meu_video');
-    var videoSrc = "https://cdn.converteai.net/f57b20d4-90f6-4e53-9180-25cce4564706/672d806eb8a560000c6c94cd/main.m3u8";
+  var video = document.getElementById('meu_video');
+  var videoSrc = "https://cdn.converteai.net/f57b20d4-90f6-4e53-9180-25cce4564706/672d806eb8a560000c6c94cd/main.m3u8";
 
-    if (Hls.isSupported()) {
-        var hls = new Hls();
-        hls.loadSource(videoSrc);
-        hls.attachMedia(video);
-        hls.on(Hls.Events.MANIFEST_PARSED, function() {
-            video.play();
-        });
-    } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-        video.src = videoSrc;
-        video.addEventListener('loadedmetadata', function() {
-            video.play();
-        });
-    }
+  if (Hls.isSupported()) {
+    var hls = new Hls();
+    hls.loadSource(videoSrc);
+    hls.attachMedia(video);
+    hls.on(Hls.Events.MANIFEST_PARSED, function() {
+      video.play();
+    });
+  } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+    video.src = videoSrc;
+    video.addEventListener('loadedmetadata', function() {
+      video.play();
+    });
+  }
+
+  // Adicionando o script externo após o código HLS.js
+  var s = document.createElement("script"); 
+  s.src = "https://cdn.converteai.net/f57b20d4-90f6-4e53-9180-25cce4564706/players/672d80b1b8a560000c6c94ed/player.js";
+  s.async = true; 
+  document.head.appendChild(s);
 </script>
       </div>
       <div class="description-YWWyRI0392116">
