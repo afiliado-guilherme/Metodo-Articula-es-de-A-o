@@ -790,8 +790,28 @@
         console.error('HLS não é suportado neste navegador.');
     }
 </script>
-        
+
+<style>
+    /* Oculta a barra de progresso do vídeo */
+    video::-webkit-media-controls-timeline {
+        display: none;
+    }
+
+    video::-webkit-media-controls {
+        display: block;
+    }
+
+    /* Oculta a barra de progresso em outros navegadores */
+    video::-moz-media-controls-timeline {
+        display: none;
+    }
+    
+    video::-ms-media-controls-timeline {
+        display: none;
+    }
+</style>
       </div>
+      
       <div class="description-YWWyRI0392116">
         <style>
           .description-YWWyRI0392116-element h3 {
